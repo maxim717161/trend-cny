@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+data/candles/
+data/operations.json

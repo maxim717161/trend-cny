@@ -298,17 +298,6 @@ def write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:
         writer.writerows(rows)
 
 
-def read_fills(path: Path) -> list[dict]:
-    with path.open() as fh:
-        rows = list(csv.DictReader(fh))
-    for row in rows:
-        row["price"] = float(row["price"])
-        row["qty"] = lots(row["qty"])
-        row["value_rub"] = float(row["value_rub"])
-        row["exchange_fee"] = float(row["exchange_fee"] or 0)
-    return rows
-
-
 def fills_after(key_file: Path, strategy: str, after_ts: str) -> list[dict]:
     """CNY fills on the key's account strictly later than an Excel cutoff."""
     token = key_file.read_text().strip()
@@ -629,7 +618,7 @@ def write_report(books: dict, positions: dict, generated_at: str) -> None:
         "",
         f"Срез на {generated_at} МСК. Время сделок — московское. Цена контракта в рублях за юань, шаг 1,0 стоит 1000 ₽ на один контракт. Результат кампании — вариационная маржа по средней цене, без биржевой и брокерской комиссии.",
         "",
-        "В шапке брокерского отчета «Трендовый юань» указан счет 2167722079 от 18.04.2022. Это тот же подключенный счет, который открывает ключ `key/trend-yan.txt`: название «Трендовый юань», доступ только на чтение. Папка `broker-report/old-good-trend/` содержит только подпись, без Excel. Лента «Старая добрая трендовушка» снята ключом `key/old-good-trend.txt`.",
+        "В шапке отчета «Трендовый юань» указан счет 2167722079 от 18.04.2022 — тот же подключенный счет, что открывает ключ `key/trend-yan.txt` (только чтение). В шапке отчетов «Старая добрая трендовушка» указан счет 2116402021 от 21.10.2021 — тот же счет, что открывает ключ `key/old-good-trend.txt`.",
         "",
         "## Как собрана лента",
         "",
@@ -683,7 +672,7 @@ def write_report(books: dict, positions: dict, generated_at: str) -> None:
         "",
         "## Старая добрая трендовушка",
         "",
-        "Excel по этому счету в репозитории нет. Лента — операции ключа с 1 октября 2021 по 12 октября 2026. Первая сделка с юанем — 12 сентября 2023. Между ноябрем 2023 и январем 2025, и между мартом 2025 и июлем 2026 сделок с юанем нет.",
+        "Источник — шесть брокерских отчетов `broker-report/old-good-trend/` с 21 октября 2021 по 7 октября 2026. В файлах 2021, 2022 и 2024 годов сделок с фьючерсом на юань нет. Первая сделка — 12 сентября 2023. Между ноябрем 2023 и январем 2025, и между мартом 2025 и июлем 2026 сделок с юанем нет. Отчет 2026 года заканчивается 7 октября; сделки 8, 9 и 12 октября дописаны из ключа.",
         "",
         f"Сейчас на счете: {format_positions(positions['old-good-trend'])}.",
         "",
@@ -719,7 +708,7 @@ def write_report(books: dict, positions: dict, generated_at: str) -> None:
         "",
         summarize(old["curve"]) + ".",
         "",
-        "Четыре экспирации сразу: CRM5, CRH5, CRZ5 и CRU5. 22–24 января это пара шорт CRM5 / лонг CRH5 по 10 контрактов. С 27 января добавляется шорт CRZ5 против лонга CRM5. С 31 января книга переезжает в пару лонг CRU5 / шорт CRH5 и живет до 26 февраля, с переворотами 20–21 февраля. Пик по модулю — 18 контрактов CRU5. После 26 февраля CRU5 остался лонгом 6 контрактов: отдельной сделки, которая закрывает этот остаток, в ленте нет (экспирация CRU5 — 18 сентября 2025, в покупках и продажах ее не видно).",
+        "Четыре экспирации сразу: CRM5, CRH5, CRZ5 и CRU5. 22–24 января это пара шорт CRM5 / лонг CRH5 по 10 контрактов. С 27 января добавляется шорт CRZ5 против лонга CRM5. С 31 января по 4 февраля лонг CRU5 против шорта CRH5. С 10 по 20 февраля пара развернута в другую сторону, пик 12 контрактов на ногу. 24–26 февраля снова лонг CRU5 и шорт CRH5 по 12. Вечером 26 февраля обе ноги закрыты: в разделе позиций на расчетную дату 27 февраля по CRU5 и CRH5 стоит ноль. Исполнения в Excel мельче, чем операции ключа, и по CRU5 количества не совпадали. Лента ниже собрана из отчета.",
         "",
         campaign_table(old["curve"]),
         "",
@@ -830,17 +819,14 @@ def load_book(name: str, fills: list[dict]) -> dict:
 
 
 def main() -> None:
-    import sys
-
-    from_fills = "--from-fills" in sys.argv
     trend = fills_from_reports(ROOT / "broker-report" / "trend-yan", "trend-yan")
     extra = fills_after(ROOT / "key" / "trend-yan.txt", "trend-yan", trend[-1]["ts"])
     print("trend-yan excel", len(trend), "api tail", len(extra))
     trend.extend(extra)
-    if from_fills and (OUT / "old-good-trend-fills.csv").exists():
-        old = read_fills(OUT / "old-good-trend-fills.csv")
-    else:
-        old = fills_from_api(ROOT / "key" / "old-good-trend.txt", "old-good-trend")
+    old = fills_from_reports(ROOT / "broker-report" / "old-good-trend", "old-good-trend")
+    old_extra = fills_after(ROOT / "key" / "old-good-trend.txt", "old-good-trend", old[-1]["ts"])
+    print("old-good-trend excel", len(old), "api tail", len(old_extra))
+    old.extend(old_extra)
     books = {
         "trend-yan": load_book("trend-yan", trend),
         "old-good-trend": load_book("old-good-trend", old),

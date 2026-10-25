@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="996" viewBox="0 0 860 996">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="280" y="24" font-family="sans-serif" font-size="16" fill="#1a1a1a">Дневной показатель Хёрста, топ-25 фьючерсов Мосбиржи</text>
+<line x1="550.0" y1="36" x2="550.0" y2="950" stroke="#9aa0a6"/>
+<text x="550.0" y="968" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#5f6368">0.50 случайное блуждание</text>
+<line x1="370.0" y1="36" x2="370.0" y2="950" stroke="#eeeeee"/>
+<text x="370.0" y="968" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5f6368">0.40</text>
+<line x1="460.0" y1="36" x2="460.0" y2="950" stroke="#eeeeee"/>
+<text x="460.0" y="968" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5f6368">0.45</text>
+<line x1="640.0" y1="36" x2="640.0" y2="950" stroke="#eeeeee"/>
+<text x="640.0" y="968" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5f6368">0.55</text>
+<line x1="730.0" y1="36" x2="730.0" y2="950" stroke="#eeeeee"/>
+<text x="730.0" y="968" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5f6368">0.60</text>
+<text x="268" y="58" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">ED  Евро/доллар</text>
+<rect x="408.8" y="46" width="141.2" height="16" fill="#9b2226"/>
+<text x="268" y="94" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">Eu  Евро/рубль</text>
+<rect x="441.9" y="82" width="108.1" height="16" fill="#9b2226"/>
+<text x="268" y="130" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">SPYF  S&P 500</text>
+<rect x="442.3" y="118" width="107.7" height="16" fill="#9b2226"/>
+<text x="268" y="166" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">BR  Нефть Brent</text>
+<rect x="457.8" y="154" width="92.2" height="16" fill="#9b2226"/>
+<text x="268" y="202" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">CNYRUBTOM  Юань/рубль TOM</text>
+<rect x="461.0" y="190" width="89.0" height="16" fill="#9b2226"/>
+<text x="268" y="238" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">EURRUBTOM  Евро/рубль TOM</text>
+<rect x="461.5" y="226" width="88.5" height="16" fill="#9b2226"/>
+<text x="268" y="274" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">NASD  NASDAQ-100</text>
+<rect x="471.9" y="262" width="78.1" height="16" fill="#9b2226"/>
+<text x="268" y="310" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">Si  Доллар/рубль</text>
+<rect x="507.1" y="298" width="42.9" height="16" fill="#9b2226"/>
+<text x="268" y="346" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">UCNY  Доллар/юань</text>
+<rect x="507.9" y="334" width="42.1" height="16" fill="#9b2226"/>
+<text x="268" y="382" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">RTS  Индекс RTS</text>
+<rect x="516.9" y="370" width="33.1" height="16" fill="#9b2226"/>
+<text x="268" y="418" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">SBRF  Сбербанк</text>
+<rect x="518.7" y="406" width="31.3" height="16" fill="#9b2226"/>
+<text x="268" y="454" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">IMOEX  Индекс Мосбиржи IMOEX</text>
+<rect x="520.3" y="442" width="29.7" height="16" fill="#9b2226"/>
+<text x="268" y="490" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">CNY  Юань/рубль</text>
+<rect x="520.3" y="478" width="29.7" height="16" fill="#9b2226"/>
+<text x="268" y="526" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">MXI  Индекс Мосбиржи, мини</text>
+<rect x="525.6" y="514" width="24.4" height="16" fill="#9b2226"/>
+<text x="268" y="562" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">MIX  Индекс Мосбиржи</text>
+<rect x="527.1" y="550" width="22.9" height="16" fill="#9b2226"/>
+<text x="268" y="598" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">USDRUBTOM  Доллар/рубль TOM</text>
+<rect x="528.9" y="586" width="21.1" height="16" fill="#9b2226"/>
+<text x="268" y="634" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">GLDRUBTOM  Золото TOM</text>
+<rect x="543.6" y="622" width="6.4" height="16" fill="#9b2226"/>
+<text x="268" y="670" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">GL  Золото GL</text>
+<rect x="544.8" y="658" width="5.2" height="16" fill="#9b2226"/>
+<text x="268" y="706" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">BRM  Нефть Brent, мини</text>
+<rect x="550.0" y="694" width="18.9" height="16" fill="#0b6e4f"/>
+<text x="268" y="742" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">GOLD  Золото</text>
+<rect x="550.0" y="730" width="50.9" height="16" fill="#0b6e4f"/>
+<text x="268" y="778" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">PLT  Платина</text>
+<rect x="550.0" y="766" width="60.6" height="16" fill="#0b6e4f"/>
+<text x="268" y="814" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">GAZR  Газпром</text>
+<rect x="550.0" y="802" width="77.7" height="16" fill="#0b6e4f"/>
+<text x="268" y="850" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">NG  Природный газ</text>
+<rect x="550.0" y="838" width="119.3" height="16" fill="#0b6e4f"/>
+<text x="268" y="886" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">SILV  Серебро</text>
+<rect x="550.0" y="874" width="159.7" height="16" fill="#0b6e4f"/>
+<text x="268" y="922" text-anchor="end" font-family="sans-serif" font-size="13" fill="#1a1a1a">COCOA  Какао</text>
+<rect x="550.0" y="910" width="174.5" height="16" fill="#0b6e4f"/>
+<text x="24" y="988" font-family="sans-serif" font-size="11" fill="#5f6368">Ниже 0.50 — контртренд, выше — тренд. Часовые свечи, склейка с января 2024 по 23 октября 2026, время биржи (МСК).</text>
+</svg>
